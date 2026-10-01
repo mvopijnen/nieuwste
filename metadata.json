@@ -1,0 +1,6 @@
+{
+  "name": "Tussen Ons",
+  "description": "Tussen Ons — Het gesprek tussen twee mensen. Een digitale ervaring die helpt om even uit de automatische piloot te komen met verrassende, eerlijke en speelse vragen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

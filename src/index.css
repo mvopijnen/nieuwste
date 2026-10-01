@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --color-crimson: #BD3A53;
+    --color-ivory: #FAF5F0;
+    --color-soft-rose: #F7D8D3;
+    --color-charcoal: #201A18;
+    --color-muted-gray: #6E625D;
+    --color-border-cream: #EFE6DE;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF5F0;
+    color: #201A18;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #BD3A53;
+    color: #FFFFFF;
+  }
+}
+
+.font-serif {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Warm subtle canvas grain */
+.bg-canvas-warm {
+  background-color: #FAF5F0;
+  background-image: radial-gradient(rgba(32, 26, 24, 0.02) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Soft Rose ambient glow */
+.glow-soft-rose {
+  box-shadow: 0 20px 60px -15px rgba(247, 216, 211, 0.7);
+}
+
+.glow-crimson {
+  box-shadow: 0 10px 30px -5px rgba(189, 58, 83, 0.25);
+}
+
+/* Soft breathing animation for phone-on-table mode */
+@keyframes breathingGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+.animate-breathe {
+  animation: breathingGlow 5s ease-in-out infinite;
+}
+
+/* Meditative 8-second slow breath inviting stillness */
+@keyframes meditativeBreath {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+.animate-slow-breath {
+  animation: meditativeBreath 8s ease-in-out infinite;
+}
+
