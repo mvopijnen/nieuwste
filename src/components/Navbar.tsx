@@ -32,7 +32,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlayer, onNavigateToSectio
     >
       <div className="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between">
         
-        {/* Zone 1: Single text element wordmark with the brand's sparkle icon from guidelines */}
+        {/* Zone 1: Single text element wordmark with sparkle icon */}
         <a
           href="#"
           onClick={(e) => {
@@ -49,13 +49,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlayer, onNavigateToSectio
               <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z" />
             </svg>
           </span>
-          <span className="font-serif text-2xl md:text-2xl font-normal tracking-tight text-[#201A18]">
+          <span className="font-serif text-2xl font-normal tracking-tight text-[#201A18]">
             Tussen Ons
           </span>
         </a>
 
-        {/* Zone 2: 4-6 clean text navigation links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-normal text-[#6E625D]">
+        {/* Zone 2: Navigation links including App Store link */}
+        <nav className="hidden md:flex items-center gap-7 text-sm font-normal text-[#6E625D]">
           <button
             onClick={() => handleLinkClick('ervaring')}
             className="hover:text-[#201A18] transition-colors focus:outline-none cursor-pointer"
@@ -86,33 +86,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlayer, onNavigateToSectio
           >
             Verhalen
           </button>
+          <button
+            onClick={() => {
+              const el = document.getElementById('einde-cta');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+              }
+            }}
+            className="text-[#BD3A53] font-medium hover:underline underline-offset-4 flex items-center gap-1 cursor-pointer"
+          >
+            <span>Download app</span>
+            <span className="text-[10px]">↓</span>
+          </button>
         </nav>
 
-        {/* Zone 3: 1-2 primary actions */}
+        {/* Zone 3: Primary actions */}
         <div className="flex items-center gap-3">
-          {/* Card collection icon button as shown in the brand screenshot */}
-          <button
-            onClick={() => handleLinkClick('werelden')}
-            className="hidden sm:flex p-2.5 rounded-xl border border-[#EFE6DE] bg-white text-[#6E625D] hover:text-[#201A18] hover:border-[#BD3A53]/30 transition-colors cursor-pointer shadow-2xs"
-            title="Bekijk de werelden"
-            aria-label="Bekijk de werelden"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-              />
-            </svg>
-          </button>
-
-          {/* Signature "Begin samen" button in Crimson Berry #BD3A53 */}
           <button
             onClick={() => onOpenPlayer()}
             className="px-5 py-2.5 text-xs sm:text-sm font-medium text-white bg-[#BD3A53] hover:bg-[#A82D45] active:scale-98 rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer shadow-xs"
@@ -184,6 +175,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPlayer, onNavigateToSectio
             className="block w-full text-left text-base text-[#201A18] py-1 cursor-pointer"
           >
             Verhalen
+          </button>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              const el = document.getElementById('einde-cta');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="block w-full text-left text-base text-[#BD3A53] font-medium py-1 cursor-pointer"
+          >
+            Download app ↓
           </button>
           <div className="pt-2">
             <button

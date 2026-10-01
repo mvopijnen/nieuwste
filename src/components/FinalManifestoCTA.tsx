@@ -4,9 +4,11 @@ interface FinalManifestoCTAProps {
   onOpenPlayer: (categoryId?: string) => void;
 }
 
-export const FinalManifestoCTA: React.FC<FinalManifestoCTAProps> = ({ onOpenPlayer }) => {
+export const FinalManifestoCTA: React.FC<FinalManifestoCTAProps> = () => {
+  const appUrl = 'https://tussen-ons.ai.studio/';
+
   return (
-    <section className="relative py-28 md:py-44 bg-[#FAF5F0] border-t border-[#EFE6DE] text-center overflow-hidden">
+    <section id="einde-cta" className="relative py-28 md:py-44 bg-[#FAF5F0] border-t border-[#EFE6DE] text-center overflow-hidden">
       {/* Soft Rose ambient glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#F7D8D3]/70 blur-3xl rounded-full pointer-events-none"
@@ -15,46 +17,40 @@ export const FinalManifestoCTA: React.FC<FinalManifestoCTAProps> = ({ onOpenPlay
 
       <div className="max-w-3xl mx-auto px-5 md:px-8 relative z-10">
         <span className="text-xs uppercase tracking-widest text-[#BD3A53] font-semibold block mb-4">
-          Vanavond
+          De Tussen Ons App
         </span>
 
         <h2
           className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#201A18] font-light tracking-tight leading-[1.18] mb-6"
           style={{ textWrap: 'balance' }}
         >
-          Leg je telefoon tussen jullie in.
+          Altijd bij de hand.
           <span className="block italic text-[#BD3A53] font-normal mt-2">
-            Kijk wie het eerst durft.
+            Open de app direct wanneer jullie eraan toe zijn.
           </span>
         </h2>
 
-        <p className="text-sm md:text-base text-[#6E625D] max-w-lg mx-auto leading-relaxed mb-10">
-          Geen download verplicht. Direct te openen in je mobiele browser tijdens een diner, in de trein of op de bank.
+        <p className="text-sm md:text-base text-[#6E625D] max-w-lg mx-auto leading-relaxed mb-12">
+          Gebruik de app tijdens een diner, in de trein of op de bank. Start direct jullie gesprekssessie via de officiële link.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() => onOpenPlayer()}
-            className="w-full sm:w-auto px-8 py-3.5 text-sm font-medium text-white bg-[#BD3A53] hover:bg-[#A82D45] active:scale-98 rounded-xl transition-all duration-200 cursor-pointer shadow-md"
+        {/* Single primary button linked to https://tussen-ons.ai.studio/ */}
+        <div className="flex items-center justify-center">
+          <a
+            href={appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 text-sm font-medium text-white bg-[#BD3A53] hover:bg-[#A82D45] active:scale-98 rounded-xl transition-all duration-200 cursor-pointer shadow-md inline-flex items-center gap-2"
           >
-            Start jullie gesprek nu
-          </button>
-          
-          <button
-            onClick={() => {
-              const el = document.getElementById('werelden');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="w-full sm:w-auto px-6 py-3.5 text-sm font-medium text-[#201A18] hover:text-[#BD3A53] bg-white rounded-xl border border-[#EFE6DE] transition-colors cursor-pointer shadow-2xs"
-          >
-            Kies eerst een wereld
-          </button>
+            <span>Open Tussen Ons</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
-        <div className="mt-12 text-xs text-[#6E625D] flex items-center justify-center gap-4 font-sans">
-          <span>Altijd kosteloos</span>
+        <div className="mt-14 text-xs text-[#6E625D] flex items-center justify-center gap-4 font-sans">
+          <span>Altijd toegankelijk</span>
           <span aria-hidden="true" className="text-[#EFE6DE]">·</span>
-          <span>Geen appstore</span>
+          <span>Geen installatie vereist</span>
           <span aria-hidden="true" className="text-[#EFE6DE]">·</span>
           <span>Direct op één scherm</span>
         </div>
